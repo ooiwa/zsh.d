@@ -21,8 +21,7 @@ function vcs_echo {
     fi
     echo "%{$color%}(%{$branch%})%{$reset_color%}" | sed -e s/@/"%F{yellow}@%f%{$color%}"/
 }
-PROMPT='
-%F{green}[%n@%m]%f%F{yellow} %~%f `vcs_echo`
+PROMPT='%F{green}[%n@%m]%f%F{yellow} %~%f `vcs_echo`
 %(?.$.%F{red}$%f) '
 
 # 補完
