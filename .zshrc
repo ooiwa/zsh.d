@@ -78,6 +78,7 @@ case ${OSTYPE} in
         #Mac用の設定
         export CLICOLOR=1
         alias ls='ls -G -F'
+        alias emacs='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n'
         ;;
     linux*)
         #Linux用の設定
