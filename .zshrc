@@ -68,8 +68,9 @@ alias mv='mv -i'
 alias mkdir='mkdir -p'
 
 # rails
-alias rake='bundle exec rake'
+# alias rake='bundle exec rake'
 alias be='bundle exec'
+# alias 'bundle install'='bundle install --path vendor/bundle'
 
 # OS 別の設定
 # see https://gist.github.com/mollifier/4979906
@@ -78,7 +79,7 @@ case ${OSTYPE} in
         #Mac用の設定
         export CLICOLOR=1
         alias ls='ls -G -F'
-        alias emacs='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n'
+        # alias emacs='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n'
         ;;
     linux*)
         #Linux用の設定
