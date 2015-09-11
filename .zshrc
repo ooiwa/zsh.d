@@ -1,5 +1,13 @@
 export LANG=ja_JP.UTF-8
 
+# git log で日本語を表示
+export LESSCHARSET=utf-8
+
+# Emacs にて 4m を表示させない
+if [ "$EMACS" ];then
+    export TERM=xterm
+fi
+
 # see http://yoshiko.hatenablog.jp/entry/2014/04/02/zshのプロンプトにgitのステータスをシンプル可愛く
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git svn
@@ -30,6 +38,13 @@ compinit
 zstyle ':completion:*:default' menu select=2
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
+# LSCOLOR
+# see http://news.mynavi.jp/column/zsh/009/
+unset LANG
+export LSCOLORS=ExFxCxdxBxegedabagacad
+export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+zstyle ':completion:*' list-colors 'di=;34;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
+
 # Emacs Key Bind
 bindkey -e
 
@@ -45,8 +60,8 @@ setopt pushd_ignore_dups
 
 # History
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 
 # Colors
 autoload colors
@@ -79,7 +94,6 @@ case ${OSTYPE} in
         #Mac用の設定
         export CLICOLOR=1
         alias ls='ls -G -F'
-        # alias emacs='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n'
         ;;
     linux*)
         #Linux用の設定
@@ -91,4 +105,3 @@ esac
 function cd() {
   builtin cd $@ && ls;
 }
-
