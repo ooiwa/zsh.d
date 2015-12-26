@@ -1,5 +1,3 @@
-export LANG=ja_JP.UTF-8
-
 # git log で日本語を表示
 export LESSCHARSET=utf-8
 
@@ -105,3 +103,5 @@ esac
 function cd() {
   builtin cd $@ && ls;
 }
+
+export LANG=ja_JP.UTF-8
